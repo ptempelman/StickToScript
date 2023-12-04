@@ -25,7 +25,7 @@ def generate_conversation(api_key, script, stick_to_script_ratio):
 
     start_prompt_rep = f"""You are a salesperson, you are starting a conversation with a potential 
         client. Try to convince them to buy from you until they say yes or no. Stick to this script
-        {script} and deviate from the script {1-stick_to_script_ratio}% of the time. What is your
+        {script} and deviate from the script {(1-stick_to_script_ratio) * 100}% of the time. What is your
         opening? Keep it short!"""
     message_rep = conversation_rep.predict(input=start_prompt_rep)
 
